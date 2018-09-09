@@ -15,7 +15,7 @@ var fixMsg ghtt.Message
 var fixMsgJson []byte
 
 func init() {
-	f, _ := os.Open("./testdata/msg.json")
+	f, _ := os.Open("../testdata/msg.json")
 	fixMsgJson, _ = ioutil.ReadAll(f)
 
 	json.Unmarshal(fixMsgJson, &fixMsg)

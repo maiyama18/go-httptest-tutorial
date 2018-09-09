@@ -8,7 +8,7 @@ import (
 	"github.com/ymr-39/go-httptest-tutorial"
 )
 
-var messageHandler http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+var MessageHandler http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 	msg := ghtt.Message{Body: "hello", From: "Tokyo"}
 
 	msgJson, err := json.Marshal(msg)
@@ -21,7 +21,7 @@ var messageHandler http.Handler = http.HandlerFunc(func(w http.ResponseWriter, r
 
 func main() {
 	mux := http.NewServeMux()
-	mux.Handle("/message", messageHandler)
+	mux.Handle("/message", MessageHandler)
 
 	log.Fatal(http.ListenAndServe(":5000", mux))
 }
